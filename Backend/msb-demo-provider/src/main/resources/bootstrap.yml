@@ -1,0 +1,20 @@
+server:
+   port: 8080
+spring:
+  application:
+    name: demo-service-provider
+  cloud:
+    config:
+      uri: ${CONFIG_URL:http://localhost:8888}
+      fail-fast: true
+      username: demo-service-provider
+      password: de72127c7c24ab359e970bea780471f1
+ENCRYPT_KEY: SSOMSBPLATFORM
+logging:
+  level:
+    com.gmcc.msb: debug
+msb:
+  sign-key: demo-service-provider-sign-key
+  serviceCode: "0090"
+  common:
+    enabled: true

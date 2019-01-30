@@ -1,0 +1,131 @@
+server:
+  port: 8888
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: msb-config
+  profiles:
+    active: local
+  sleuth:
+    sampler:
+      percentage: 1.0
+auth.url.exclude.pattern:
+ - /serviceConfig/**
+ - /**/serviceConfig
+ - /**/refresh
+ - /encrypt/**
+ - /decrypt/**
+ - /env/**
+ - /archaius/**
+ - /heapdump/**
+ - /metrics/**
+ - /autoconfig/**
+ - /health/**
+ - /refresh/**
+ - /info/**
+ - /refreshErrorCodes
+logging:
+  level:
+    com.gmcc.msb.config.config: info
+    com.gmcc.msb: debug
+
+msb:
+  enabledSignFilter: true
+  sign-key: msb-config
+  serviceCode: "0003"
+  common:
+    enabled: true
+  signCheckController: com.gmcc.msb.config.controller.ConfigController,com.gmcc.msb.common.controller.ErrorCodeRefreshController
+
+flyway:
+  locations: classpath:/db/common,classpath:/db/${spring.profiles.active:undefined}
+  baseline-on-migrate: true
+  baseline-version: 0
+
+
+---
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/msbtest?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: '{cipher}07c50d40ae9ad13d7264a10d9c559218c6b4fcf702bdd2f27b6434ad8a59e952'
+    test-on-borrow: true
+    validation-query: select 1
+    max-active: 2
+  zipkin:
+    base-url: http://localhost:9411
+management:
+  security:
+    enabled: 'false'
+flyway:
+ enabled: false
+
+---
+spring:
+  profiles: test
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://msb-mysql2-test:3306/msb?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: msbuser
+      password: '{cipher}0f7a152ae0d72f9979bda58a6a81e5d899c24410541544a6b6ef55e7db3027a9'
+      test-on-borrow: true
+      validation-query: select 1
+      max-active: 2
+  zipkin:
+      base-url: http://msb-zipkin-test:9411
+management:
+    security:
+      enabled: 'false'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://msb-eureka-peer1-test:8761/eureka/
+
+---
+spring:
+  profiles: prepro
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.169.17.52:3306/msb?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: acnmsb
+    password: '{cipher}91d91117b3b83b5bddfe31d77bdfae9ca94a64103036996618d48d90d1a2e122'
+    test-on-borrow: true
+    validation-query: select 1
+  zipkin:
+    base-url: http://msb-zipkin-prepro:9411
+management:
+  security:
+    enabled: 'false'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://msb-eureka-peer1-prepro:8761/eureka,http://msb-eureka-peer2-prepro:8761/eureka,http://msb-eureka-peer3-prepro:8761/eureka
+
+---
+spring:
+  profiles: pro
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.169.18.28:3306/msb?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: acnmsb
+    password: '{cipher}113d84918910f6d547b1c2559525c4b5cee04bd6762fe68be8bd2208c5e5906c'
+    test-on-borrow: true
+    validation-query: select 1
+  zipkin:
+    base-url: http://msb-zipkin-pro:9411
+management:
+  security:
+    enabled: 'false'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://msb-eureka-peer1-pro:8761/eureka,http://msb-eureka-peer2-pro:8761/eureka,http://msb-eureka-peer3-pro:8761/eureka

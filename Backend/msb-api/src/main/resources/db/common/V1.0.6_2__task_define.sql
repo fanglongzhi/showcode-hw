@@ -1,0 +1,20 @@
+DELETE FROM t_task ;
+
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (1, 'msb-api', 'com.gmcc.msb.api.task.Tasks.firstSyncApiInfos','同步API信息');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (2, 'msb-api', 'com.gmcc.msb.api.task.Tasks.syncApiInfos','定时同步信息到redis');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (3, 'msb-api', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (4, 'msb-auth', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (5, 'msb-break', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (6, 'msb-config', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (7, 'msb-fluid', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (8, 'msb-monitor', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (9, 'msb-monitor', 'com.gmcc.msb.monitor.task.DataPersistenceTask.insertTable','网关监控写表');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (10, 'msb-monitor', 'com.gmcc.msb.monitor.task.GatewayDataHanderTask.dataHander','网关监控');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (11, 'msb-monitor', 'com.gmcc.msb.monitor.task.Tasks.clearLog','清理日志');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (12, 'msb-monitor', 'com.gmcc.msb.monitor.task.Tasks.requestLogProcess','日志处理');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (13, 'msb-route', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (14, 'msb-service', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (15, 'msb-service', 'com.gmcc.msb.msbservice.task.Tasks.resetLastSyncTime','重置服务同步时间');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (16, 'msb-service', 'com.gmcc.msb.msbservice.task.Tasks.syncServiceLogTask','同步服务日志');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (17, 'msb-system', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');
+INSERT INTO t_task (id, service_id, task_key, task_name) VALUES (18, 'msb-zuul', 'com.gmcc.msb.common.task.MyTasks.initErrorCode','初始化错误码');

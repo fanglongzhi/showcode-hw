@@ -1,0 +1,36 @@
+server-port: 8080
+spring:
+  profiles:
+    active: local
+  application:
+    name: msb-demo-non-springcloud
+
+##配置中心连接地址和凭证
+config-center-url: ${CONFIG_URL:http://localhost:8888}
+##网关签名密钥
+msb:
+  signKey: msb-demo-non-springcloud
+  serviceCode: "0090"
+---
+spring:
+  profiles: local
+  zipkin:
+    base-url: http://127.0.0.1:7777
+config-userName: msb-demo-non-springcloud
+config-password: msb-join-demo
+
+---
+spring:
+  profiles: test
+  zipkin:
+    base-url: http://msb-zipkin-test:9411/
+config-userName: msb-demo-non-springcloud
+config-password: 5e65f065d66615469b5b99c077da6b6b
+
+---
+spring:
+  profiles: prepro
+  zipkin:
+    base-url: http://msb-zipkin-prepro:9411/
+config-userName: msb-demo-non-springcloud
+config-password: 4777cb118b91273e3ce4b51ba0e41276

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+   config:
+     server:
+       encrypt:
+         enabled: false
+ENCRYPT_KEY: SSOMSBPLATFORM

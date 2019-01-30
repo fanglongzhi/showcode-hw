@@ -1,0 +1,30 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: msb-zuul
+  profiles:
+    active: local
+  cloud:
+    config:
+      uri: ${CONFIG_URL:http://localhost:8888}
+      failFast: true
+      username: msb-zuul
+      password: 25dfdf99567227a80b61941c9825ec01
+ENCRYPT_KEY: SSOMSBPLATFORM
+zuul:
+  ribbonIsolationStrategy: THREAD
+msb:
+  sign-key: msb-zuul
+  serviceCode: "0008"
+  common:
+    enabled: true
+eureka:
+  instance:
+    metadata-map:
+      cluster: MSB-ZUUL
+      management.port: ${management.port:10000}
+logging:
+  level:
+    root: info

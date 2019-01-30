@@ -1,0 +1,1 @@
+update t_config set property_value = '192.169.17.80' where property_key = 'spring.redis.host' and application in ('msb-api','msb-auth','msb-fluid','msb-monitor','msb-zuul');

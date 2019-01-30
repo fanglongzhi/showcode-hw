@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: msb-demo-consumer
+  profiles:
+    active: local
+
+ssoUrl: http://188.0.55.247:80/sso/oauth/token
+logging:
+  level:
+    org.springframework.web.client: debug
+
+---
+spring:
+  profiles: local
+msb:
+  authUrl: http://188.0.96.27:30133/gw/msbauth/oauth/token
+  authCheckUrl: http://188.0.96.27:30133/gw/msbauth/oauth/sso_login_check
+  demonServiceRootUrl: http://188.0.96.27:30133/gw/demo-service-provider/
+appId: 3628d607-e879-480d-ba29-0e7da29b1c80
+appSecret: 44fe2029277bed998e37daf650e19d90
+
+---
+spring:
+  profiles: test
+msb:
+  authUrl: http://msb-nginx-test:80/gw/msbauth/oauth/token
+  authCheckUrl: http://msb-nginx-test:80/gw/msbauth/oauth/sso_login_check
+  demonServiceRootUrl: http://msb-nginx-test:80/gw/demo-service-provider/
+appId: 3628d607-e879-480d-ba29-0e7da29b1c80
+appSecret: 44fe2029277bed998e37daf650e19d90
+
+---
+spring:
+  profiles: prepro
+msb:
+  authUrl: http://188.0.55.245:8080/gw/msbauth/oauth/token
+  authCheckUrl: http://188.0.55.245:8080/gw/msbauth/oauth/sso_login_check
+  demonServiceRootUrl: http://188.0.55.245:8080/gw/demo-service-provider/
+appId: bcdcd357-eb98-4993-a893-f93519f9e8a8
+appSecret: 43a5b8421984636e86b33c3a07c6d2a5

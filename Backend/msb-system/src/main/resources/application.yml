@@ -1,0 +1,14 @@
+msb:
+  system:
+    taskNames:
+      com.gmcc.msb.common.task.MyTasks.initErrorCode: 初始化错误码
+      com.gmcc.msb.monitor.task.Tasks.requestLogProcess: 日志处理
+      com.gmcc.msb.monitor.task.Tasks.clearLog: 清理日志
+      com.gmcc.msb.monitor.task.GatewayDataHanderTask.dataHander: 网关监控
+      com.gmcc.msb.monitor.task.DataPersistenceTask.insertTable: 网关监控写表
+      com.gmcc.msb.msbservice.task.Tasks.syncServiceLogTask: 同步服务日志
+      com.gmcc.msb.api.task.Tasks.firstSyncApiInfos: 同步API信息
+      com.gmcc.msb.api.task.Tasks.firstSyncAppInfos: 同步应用信息
+      com.gmcc.msb.api.task.Tasks.firstSyncAppOrderApis: 同步订阅信息
+      com.gmcc.msb.api.task.Tasks.syncApiInfos: 定时同步信息到redis
+      com.gmcc.msb.msbservice.task.Tasks.resetLastSyncTime: 重置服务同步时间

@@ -1,0 +1,1 @@
+update t_config set property_value = 'http://msb-eureka-peer1-prepro:8761/eureka,http://msb-eureka-peer2-prepro:8761/eureka,http://msb-eureka-peer3-prepro:8761/eureka' where property_key = 'eureka.client.service-url.defaultZone' and application in ('msb-api','msb-auth','msb-break','msb-fluid','msb-monitor','msb-route','msb-service','msb-system','msb-zuul');

@@ -1,0 +1,21 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+test_chrome
+    [Tags]    node1
+    Open Browser  http://msb-api.gd-cts-msb-acn.svc.cluster.local:10000     browser=chrome   remote_url=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub
+    sleep    6
+    [Teardown]    Close Browser
+
+test_chrome
+    [Tags]    node2
+    Open Browser  http://msb-api.gd-cts-msb-acn.svc.cluster.local:10000     browser=chrome   remote_url=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub
+    sleep    6
+    [Teardown]    Close Browser
+
+test_chrome
+    [Tags]    node3
+    Open Browser  http://msb-api.gd-cts-msb-acn.svc.cluster.local:10000     browser=chrome   remote_url=http://selenium-hub.selenium.svc.cluster.local:4444/wd/hub
+    sleep    6
+    [Teardown]    Close Browser

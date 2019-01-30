@@ -1,0 +1,6 @@
+projectKey=gd-cts-msb-acn-msb-demo-consumer
+serverUrl=http://192.168.20.10:30009
+serverVersion=7.4.0.18908
+dashboardUrl=http://192.168.20.10:30009/dashboard?id=gd-cts-msb-acn-msb-demo-consumer
+ceTaskId=AWdZncvtw2W0kxVTIeBb
+ceTaskUrl=http://192.168.20.10:30009/api/ce/task?id=AWdZncvtw2W0kxVTIeBb

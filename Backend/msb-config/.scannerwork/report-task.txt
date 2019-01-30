@@ -1,0 +1,6 @@
+projectKey=gd-cts-msb-acn-msb-config
+serverUrl=http://188.0.96.27:30009
+serverVersion=7.1.0.11001
+dashboardUrl=http://188.0.96.27:30009/dashboard/index/gd-cts-msb-acn-msb-config
+ceTaskId=AWWt5OKD4ynPe4B2iK6Q
+ceTaskUrl=http://188.0.96.27:30009/api/ce/task?id=AWWt5OKD4ynPe4B2iK6Q

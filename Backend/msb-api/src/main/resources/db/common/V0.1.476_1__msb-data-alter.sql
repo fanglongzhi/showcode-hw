@@ -1,0 +1,1 @@
+UPDATE `t_module` SET `apis` = '10003' WHERE (`id` = '110');

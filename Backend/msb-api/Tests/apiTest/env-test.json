@@ -1,0 +1,16 @@
+{
+  "id": "707e1f6c-da63-4917-9af0-ef9871e642eb",
+  "name": "msb-test",
+  "values": [
+    {
+      "key": "ROOT_URL",
+      "value": "http://msb-zuul-test.gd-cts-msb-acn.svc.cluster.local:10000",
+      "description": "",
+      "type": "text",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-08-30T02:42:47.383Z",
+  "_postman_exported_using": "Postman/6.0.10"
+}

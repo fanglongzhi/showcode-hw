@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: msb-zuul
+  namespace: @k8s.namespace@
+spec:
+  replicas: @spec.replicas@
+  selector:
+    app: msb-zuul
+  template:
+    metadata:
+      name: msb-zuul
+      labels:
+        app: msb-zuul
+    spec:
+      containers:
+      - name: msb-zuul
+        image: @docker.image.prefix@/msb-zuul
+        ports:
+        - containerPort: 8091
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: msb-zuul
+  namespace: @k8s.namespace@
+  labels:
+    app: msb-zuul
+spec:
+  type: NodePort
+  selector:
+    app: msb-zuul
+  ports:
+  - port: 8091
+    targetPort: 8091
+    nodePort: 31051

@@ -1,0 +1,1 @@
+INSERT INTO t_error_code (service_id, code, message, description) VALUES ( 'msb-system', '0001-10142', '只有上线状态的API才可以被订阅', '');

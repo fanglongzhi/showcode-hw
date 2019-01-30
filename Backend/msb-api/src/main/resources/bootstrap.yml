@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: msb-api
+  profiles:
+    active: local
+  cloud:
+    config:
+      uri: ${CONFIG_URL:http://localhost:8888}
+      fail-fast: true
+      username: msb-api
+      password: 52b28c328c33760cfdb9eb2d81fe832f
+ENCRYPT_KEY: SSOMSBPLATFORM
+msb:
+  sign-key: msb-api
+  serviceCode: "0001"
+  common:
+    enabled: true
+flyway:
+  locations: classpath:/db/common,classpath:/db/${spring.profiles.active:undefined}
+  baseline-on-migrate: true
+  baseline-version: 0
+
+---
+spring:
+  profiles: local
+flyway:
+ enabled: false
+

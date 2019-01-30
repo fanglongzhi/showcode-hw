@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  profiles:
+      active: utest
+spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.show-sql: false
+spring.jpa.hibernate.ddl-auto: create
+flyway:
+  enabled: false

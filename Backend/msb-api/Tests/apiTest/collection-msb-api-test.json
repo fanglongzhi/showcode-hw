@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "7993e0d4-e43e-4b34-bc4e-8acdbfedeba7",
+		"name": "Healthcheck",
+		"description": "Service Health check by Spring Boot Actutaor /health Endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health",
+			"description": "",
+			"item": [
+				{
+					"name": "health_check",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10c5ab95-de52-49a0-9a34-6c69b287bdb2",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Health Check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.eql(\"UP\");",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{ROOT_URL}}/health",
+							"host": [
+								"{{ROOT_URL}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

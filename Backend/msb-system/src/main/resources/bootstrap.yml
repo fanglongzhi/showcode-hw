@@ -1,0 +1,21 @@
+server:
+   port: 8081
+spring:
+   application:
+      name: msb-system
+   profiles:
+     active:
+       - local
+   cloud:
+    config:
+      uri: ${CONFIG_URL:http://localhost:8888}
+      fail-fast: true
+      username: msb-system
+      password: 332e36812c6507799b6d30a72ac992df
+ENCRYPT_KEY: SSOMSBPLATFORM
+spring.jpa.show-sql: true
+msb:
+  sign-key: msb-system
+  serviceCode: "0007"
+  common:
+    enabled: true

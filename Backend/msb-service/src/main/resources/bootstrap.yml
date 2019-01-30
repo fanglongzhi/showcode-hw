@@ -1,0 +1,20 @@
+server:
+   port: 8080
+spring:
+   application:
+      name: msb-service
+   profiles:
+     active:
+       - local
+   cloud:
+    config:
+      uri: ${CONFIG_URL:http://localhost:8888}
+      fail-fast: true
+      username: msb-service
+      password: 36d80da470b1e75b4798498edff314cd
+ENCRYPT_KEY: SSOMSBPLATFORM
+msb:
+  sign-key: msb-service
+  serviceCode: "0006"
+  common:
+    enabled: true

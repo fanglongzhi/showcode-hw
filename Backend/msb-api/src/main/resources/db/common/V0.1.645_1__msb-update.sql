@@ -1,0 +1,1 @@
+UPDATE `t_module` SET `parent_id` = '137', `apis` = '10106' WHERE (`id` = '138');
